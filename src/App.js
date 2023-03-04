@@ -1,25 +1,30 @@
-import React from "react";
-import {BrowserRouter,Route,Routes} from "react-router-dom"
-import Navbar from "./components/Navbar";
-import Cards_container from "./components/Cards_container";
-import OpenRes from "./Pages/OpenRes";
-import Home from "./Pages/Home";
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import Menu from './Pages/Menu';
+import Scanner from './Scanner';
+import Summary from './Pages/Summary';
+import TableNumContext from './TableNumContext';
+import CartContext from './CartContext';
 const App = () => {
   return (
     <>
+    <CartContext>
+
+
+    <TableNumContext>
+
        <BrowserRouter>
           <Routes>
-
-            <Route path="/" element={<Home/>}/>
-               <Route path="restaurant" element={<OpenRes/>}/>
-
+              
+            <Route path='/' element={<Scanner/>} ></Route>  
+            <Route path='/menu' element={<Menu/>} >
+              
+              </Route>  
+               <Route path='/summary' element={<Summary/>} ></Route>  
+            
           </Routes>
        </BrowserRouter>    
-      
-
-      {/* <Navbar/>
-      <div className="big-img"></div>
-      <Cards_container/> */}
+    </TableNumContext>
+    </CartContext>
       
     </>
   )
